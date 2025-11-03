@@ -85,7 +85,7 @@ body, html {
 
     <div class="w3-col l3 m6 w3-margin-bottom">
       <div class="w3-card test">
-        <model-viewer id="mycap" src="./3d/cap.glb" alt="CAP" auto-rotate camera-controls></model-viewer>
+        <model-viewer id="mycap" src="./3d/cap.glb" alt="CAP" onclick="onClick1(this)" auto-rotate camera-controls></model-viewer>
         <!-- <img src="https://www.w3schools.com/w3images/team2.jpg" alt="Cap" style="width:100%"> -->
         <div class="w3-container">
           <h3 style="text-align: center;">CAP</h3>
@@ -98,7 +98,7 @@ body, html {
     </div>
     <div class="w3-col l3 m6 w3-margin-bottom">
       <div class="w3-card test">
-        <model-viewer id="mynipple" src="./3d/nipple.glb" alt="CAP" auto-rotate camera-controls></model-viewer>
+        <model-viewer id="mynipple" src="./3d/nipple.glb" alt="NIPPLE" onclick="onClick1(this)" auto-rotate camera-controls></model-viewer>
         <!-- <img src="./3d/nipple.glb" alt="Nipple" style="width:100%"> -->
         <div class="w3-container">
           <h3 style="text-align: center;">NIPPLE</h3>
@@ -111,7 +111,7 @@ body, html {
     </div>
     <div class="w3-col l3 m6 w3-margin-bottom">
       <div class="w3-card test">
-        <model-viewer id="mynut" src="./3d/cap.glb" alt="CAP" auto-rotate camera-controls></model-viewer>
+        <model-viewer id="mynut" src="./3d/cap.glb" alt="NUT" onclick="onClick1(this)" auto-rotate camera-controls></model-viewer>
         <!-- <img src="https://www.w3schools.com/w3images/team2.jpg" alt="nut" style="width:100%"> -->
         <div class="w3-container">
           <h3 style="text-align: center;">NUT</h3>
@@ -124,7 +124,7 @@ body, html {
     </div>
     <div class="w3-col l3 m6 w3-margin-bottom">
       <div class="w3-card test">
-        <model-viewer id="mybend" src="./3d/nipple.glb" alt="CAP" auto-rotate camera-controls></model-viewer>
+        <model-viewer id="mybend" src="./3d/nipple.glb" alt="BEND PIPE" onclick="onClick1(this)" auto-rotate camera-controls></model-viewer>
         <!-- <img src="https://www.w3schools.com/w3images/team2.jpg" alt="Bend Pipe" style="width:100%"> -->
         <div class="w3-container">
           <h3 style="text-align: center;">Bend Pipe</h3>
@@ -137,7 +137,7 @@ body, html {
     </div>
     <div class="w3-col l3 m6 w3-margin-bottom">
       <div class="w3-card test">
-        <model-viewer id="myforge" src="./3d/nipple.glb" alt="FORGE" auto-rotate camera-controls></model-viewer>
+        <model-viewer id="myforge" src="./3d/nipple.glb" alt="FORGING" onclick="onClick1(this)" auto-rotate camera-controls></model-viewer>
         <!-- <img src="https://www.w3schools.com/w3images/team2.jpg" alt="Bend Pipe" style="width:100%"> -->
         <div class="w3-container">
           <h3 style="text-align: center;">Forging</h3>
@@ -196,6 +196,15 @@ body, html {
   </div>
 </div>
 
+<!-- Modal for full size 3D models on click-->
+<div id="modal02" class="w3-modal w3-black">
+  <span class="w3-button w3-xxlarge w3-black w3-padding-large w3-display-topright" onclick="modal02.style.display='none'" title="Close Modal Image">×</span>
+  <div style="height: 100%;" class="w3-animate-zoom w3-center w3-transparent w3-padding-64">
+    <model-viewer style="height: 60%; margin: auto;" id="img02" auto-rotate camera-controls></model-viewer>
+    <p id="caption2" class="w3-opacity w3-large"></p>
+  </div>
+</div>
+
 <!-- Contact Section -->
 <div class="w3-container" style="padding:128px 16px" id="contact">
   <h3 class="w3-center">CONTACT</h3>
@@ -240,6 +249,13 @@ function onClick(element) {
   captionText.innerHTML = element.alt;
 }
 
+function onClick1(element) {
+  document.getElementById("img02").src = element.src;
+  document.getElementById("modal02").style.display = "block";
+  var captionText = document.getElementById("caption2");
+  captionText.innerHTML = element.alt;
+}
+
 
 // Toggle between showing and hiding the sidebar when clicking the menu icon
 var mySidebar = document.getElementById("mySidebar");
@@ -268,16 +284,16 @@ modelViewer1.addEventListener('load', () => {
   material.pbrMetallicRoughness.setRoughnessFactor(0.2);
 },);
 
-  if (modelViewer1.model) {
-    const material = modelViewer1.model.materials[0];
-    if (material) {
-      material.pbrMetallicRoughness.setBaseColorFactor([0.85, 0.85, 0.85, 0.1]);
-      material.pbrMetallicRoughness.setMetallicFactor(0.9);
-      material.pbrMetallicRoughness.setRoughnessFactor(0.2);
-    } else {
-      console.warn("No material found on the model.");
-    }
+if (modelViewer1.model) {
+  const material = modelViewer1.model.materials[0];
+  if (material) {
+    material.pbrMetallicRoughness.setBaseColorFactor([0.85, 0.85, 0.85, 0.1]);
+    material.pbrMetallicRoughness.setMetallicFactor(0.9);
+    material.pbrMetallicRoughness.setRoughnessFactor(0.2);
+  } else {
+    console.warn("No material found on the model.");
   }
+}
 
 const modelViewer2 = document.querySelector('#mynipple');
 modelViewer2.style.width = '100%';
@@ -358,6 +374,26 @@ modelViewer5.addEventListener('load', () => {
       console.warn("No material found on the model.");
     }
   }
+
+const modelViewer6 = document.querySelector('#img02');
+modelViewer6.style.width = '100%';
+modelViewer6.addEventListener('load', () => {
+  const material = modelViewer6.model.materials[0]; 
+  material.pbrMetallicRoughness.setBaseColorFactor([0.85, 0.85, 0.85, 0.1]);
+  material.pbrMetallicRoughness.setMetallicFactor(0.9);
+  material.pbrMetallicRoughness.setRoughnessFactor(0.2);
+},);
+
+if (modelViewer6.model) {
+  const material = modelViewer6.model.materials[0];
+  if (material) {
+    material.pbrMetallicRoughness.setBaseColorFactor([0.85, 0.85, 0.85, 0.1]);
+    material.pbrMetallicRoughness.setMetallicFactor(0.9);
+    material.pbrMetallicRoughness.setRoughnessFactor(0.2);
+  } else {
+    console.warn("No material found on the model.");
+  }
+}
 // ------------------------------------------------
 </script>
 <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
