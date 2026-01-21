@@ -1,458 +1,317 @@
 <!DOCTYPE html>
-<html>
-<title>Bir Industries</title>
-<link rel="icon" type="image/x-icon" href="./3d/favicon.ico">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raileway">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="./style.css">
-<style>
-body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+<html lang="en">
+<head>
+  <title>BIR Industries | Hydraulic & Forged Fittings Manufacturer in Ludhiana</title>
 
-body, html {
-  height: 100%;
-  line-height: 1.8;
-}
+  <!-- META -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="BIR Industries is a Ludhiana-based manufacturer of hydraulic fittings, forged components, pipe caps, nipples and CNC machined parts supplying across Punjab and India.">
+  <meta name="keywords" content="hydraulic fittings manufacturer in Ludhiana, forged fittings Ludhiana, CNC machining Ludhiana, pipe nipple manufacturer Punjab">
 
-/* Full height image header */
-.bgimg-1 {
-  background-position: center;
-  background-size: contain;
-  background-image: url("./3d/assembly_center.gif");
-  min-height: 100%;
-  background-color: #2d2d31;
-  background-repeat: no-repeat;
-}
+  <!-- ICON -->
+  <link rel="icon" href="./3d/favicon.ico">
 
-.w3-bar .w3-button {
-  padding: 16px;
-}
-</style>
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- MODEL VIEWER -->
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+</head>
+
 <body>
 
-<!-- Navbar (sit on top) -->
-<div class="w3-top cnav">
-  <div class="w3-bar w3-white w3-card" style="display: flex;" id="myNavbar">
-    <a href="#home" class="w3-bar-item w3-button w3-wide" style="font: 2em sans-serif;">BIR INDUSTRIES</a>
-    <!-- Right-sided navbar links -->
-    <div class="w3-right w3-hide-small" style="display: contents;">
-      <!-- <a href="#about" class="w3-bar-item w3-button">ABOUT</a> -->
-      <a href="#team" class="w3-bar-item w3-button"><i class="fa fa-user"></i> PRODUCTS</a>
-      <a href="#work" class="w3-bar-item w3-button"><i class="fa fa-th"></i> CAPABILITY</a>
-      <!-- <a href="#pricing" class="w3-bar-item w3-button"><i class="fa fa-usd"></i> PRICING</a> -->
-      <a href="#contact" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> CONTACT</a>
-    </div>
-    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+<!-- NAVBAR -->
+<div id="navbar" class="w3-top nav solid shrink">
+  <div class="w3-bar nav-inner">
 
-    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
-      <i class="fa fa-bars"></i>
+    <a href="#home" class="w3-bar-item nav-brand">
+      BIR INDUSTRIES
+      <!-- <span>Hydraulic Fittings</span> -->
     </a>
+
+    <div class="w3-right w3-hide-small" style="padding: inherit;">
+      <!-- <div class="dropdown">
+        <button class="dropbtn">Products ▾</button>
+        <div class="dropdown-content">
+          <a href="#products">All Products</a>
+          <a href="#products">Hydraulic Fittings</a>
+          <a href="#products">Forged Components</a>
+          <div class="sub-dropdown">
+            <span>CNC Parts ▸</span>
+            <div class="sub-dropdown-content">
+              <a href="#products">Pipe Nipples</a>
+              <a href="#products">Pipe Caps</a>
+            </div>
+          </div>
+        </div>
+      </div> -->
+      <a href="#products" class="nav-link">Products</a>
+      <a href="#capability" class="nav-link">Capability</a>
+      <a href="#contact" class="nav-link">Contact</a>
+
+    </div>
+
+    <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="toggleNav()">☰</a>
   </div>
 </div>
 
-<!-- Sidebar on small screens when clicking the menu icon -->
-<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large cnav" style="display:none" id="mySidebar">
-  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
-  <!-- <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">ABOUT</a> -->
-  <a href="#team" onclick="w3_close()" class="w3-bar-item w3-button">PRODUCTS</a>
-  <a href="#work" onclick="w3_close()" class="w3-bar-item w3-button">CAPABILITY</a>
-  <!-- <a href="#pricing" onclick="w3_close()" class="w3-bar-item w3-button">PRICING</a> -->
-  <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">CONTACT</a>
-</nav>
+<!-- MOBILE MENU -->
+<div id="mobileNav" class="mobile-nav w3-hide-large w3-hide-medium">
+  <a href="#products" onclick="toggleNav()">Products</a>
+  <a href="#capability" onclick="toggleNav()">Capability</a>
+  <a href="#contact" onclick="toggleNav()">Contact</a>
+</div>
 
-<!-- Header with full-height image -->
-<header class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
-  <div class="w3-display-left w3-text-white" style="padding:48px">
-    <span class="w3-jumbo w3-hide-small">Premium Hydraulic and Hose Fittings</span><br>
-    <span class="w3-xxlarge w3-hide-large w3-hide-medium">Premium Hydraulic and Hose Fittings</span><br>
-    <span class="w3-large">Quality Nut, Nipple and Cap for industry needs</span>
-    <p><a href="#team" class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off">Explore Our Products</a></p>
-  </div> 
-  <!-- <div class="w3-display-bottomleft w3-text-grey w3-large" style="padding:24px 48px">
-    <a href="https://www.facebook.com/bir.parkash.102758"><i class="fa fa-facebook-official w3-hover-opacity"></i></a>
-    <!-- <i class="fa fa-instagram w3-hover-opacity"></i>
-    <!-- <i class="fa fa-snapchat w3-hover-opacity"></i>
-    <!-- <i class="fa fa-pinterest-p w3-hover-opacity"></i> 
-    <!-- <i class="fa fa-twitter w3-hover-opacity"></i> 
-    <a><i class="fa fa-linkedin w3-hover-opacity"></i></a>
-  </div> -->
-</header>
+<div class="page-wrap">
 
-<!-- Team Section -->
-<div class="w3-container" style="padding: 64px;" id="team">
-  <h3 class="w3-center">OUR PRODUCTS</h3>
-  <p class="w3-center w3-large"></p>
-  <div class="w3-row-padding w3-grayscale" style="margin-top:64px">
+<!-- HERO -->
+<section id="home">
+  <header class="hero">
+    <div class="hero-content">
+      <h1 class="w3-xxlarge"><b>Premium Hydraulic & Forged Fittings</b></h1>
+      <p class="w3-large">In-house forging & CNC machining for industrial applications</p>
+      <a href="#products" class="w3-button w3-white w3-large w3-margin-top">Explore Products</a>
+    </div>
+  </header>
+</section>
 
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-card test">
-        <model-viewer id="mycap" src="./3d/cap.glb" alt="CAP" onclick="onClick1(this)" auto-rotate camera-controls></model-viewer>
-        <!-- <img src="https://www.w3schools.com/w3images/team2.jpg" alt="Cap" style="width:100%"> -->
-        <div class="w3-container product-details">
-          <h3 style="text-align: center;">CAP</h3>
-          <!-- <p class="w3-opacity">CEO & Founder</p> -->
-          <p>As a wholesale manufacturer, we provide a complete selection of pipe caps, including threaded and plain options, in various materials. 
-            Our caps ensure a leak-proof seal and provide reliable closure for all your industrial and plumbing projects.</p>
-          <!-- <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contact</button></p> -->
+<!-- WHY US -->
+<section>
+  <div class="w3-container w3-light-grey w3-padding-64 w3-center">
+    <h2>WHY BIR INDUSTRIES</h2>
+    <div class="w3-row-padding w3-margin-top">
+      <div class="w3-col l3 m6"><i class="fa fa-industry w3-xxlarge"></i><p><b>In-House Forging</b></p></div>
+      <div class="w3-col l3 m6"><i class="fa fa-cogs w3-xxlarge"></i><p><b>CNC Precision</b></p></div>
+      <div class="w3-col l3 m6"><i class="fa fa-check-circle w3-xxlarge"></i><p><b>Industrial Grade</b></p></div>
+      <div class="w3-col l3 m6"><i class="fa fa-truck w3-xxlarge"></i><p><b>Pan-India Supply</b></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section>
+  <div class="w3-container w3-padding-32 about-block">
+    <h2 class="w3-center">Hydraulic & Forged Components Manufacturer in Ludhiana</h2>
+    <p>
+      BIR Industries is a Ludhiana-based manufacturer specializing in hydraulic fittings,
+      forged components, pipe caps, pipe nipples and CNC machined parts.
+      With in-house forging presses and CNC turning facilities,
+      we supply precision-engineered components to OEMs and industrial buyers
+      across Punjab and all over India.
+    </p>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section id="products">
+  <div class="w3-container w3-padding-64">
+    <h2 class="w3-center">OUR PRODUCTS</h2>
+    <div class="w3-row-padding w3-margin-top">
+
+      <div class="w3-col l3 m6">
+        <div class="w3-card">
+          <model-viewer src="./3d/cap.glb" auto-rotate camera-controls></model-viewer>
+          <div class="w3-container product-details">
+            <h4 class="w3-center">CAP</h4>
+            <p>
+              Threaded and plain pipe caps manufactured from forged steel.
+              Designed for leak-proof closure in hydraulic, pneumatic and industrial piping systems.
+            </p>
+            <p class="w3-small w3-text-grey">
+              Available in multiple sizes, threads and materials as per customer drawings.
+            </p>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-card test">
-        <model-viewer id="mynipple" src="./3d/nipple.glb" alt="NIPPLE" onclick="onClick1(this)" auto-rotate camera-controls></model-viewer>
-        <!-- <img src="./3d/nipple.glb" alt="Nipple" style="width:100%"> -->
-        <div class="w3-container product-details">
-          <h3 style="text-align: center;">NIPPLE</h3>
-          <!-- <p class="w3-opacity">Art Director</p> -->
-          <p>We are a leading producer of pipe nipples, offering a variety of sizes, configurations, and materials for industrial and residential use. 
-            Our nipples are rigorously tested to provide a durable, high-strength connection for seamless piping systems.</p>
-          <!-- <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contact</button></p> -->
+
+      <div class="w3-col l3 m6">
+        <div class="w3-card">
+          <model-viewer src="./3d/nipple.glb" auto-rotate camera-controls></model-viewer>
+          <div class="w3-container product-details">
+            <h4 class="w3-center">NIPPLE</h4>
+            <p>
+              High-strength threaded pipe nipples produced with precise CNC machining.
+              Suitable for high-pressure hydraulic lines and fluid transfer applications.
+            </p>
+            <p class="w3-small w3-text-grey">
+              Available in multiple sizes, threads and materials as per customer drawings.
+            </p>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-card test">
-        <model-viewer id="mynut" src="./3d/nut.glb" alt="NUT" onclick="onClick1(this)" auto-rotate camera-controls></model-viewer>
-        <!-- <img src="https://www.w3schools.com/w3images/team2.jpg" alt="nut" style="width:100%"> -->
-        <div class="w3-container product-details">
-          <h3 style="text-align: center;">NUT</h3>
-          <!-- <p class="w3-opacity">Web Designer</p> -->
-          <p>We manufacture premium, high-tensile nuts from our own quality forgings, ensuring superior strength and performance in demanding applications. 
-            Available in a wide range of sizes and materials to meet all your wholesale industrial needs.</p>
-          <!-- <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contact</button></p> -->
+
+      <div class="w3-col l3 m6">
+        <div class="w3-card">
+          <model-viewer src="./3d/nut.glb" auto-rotate camera-controls></model-viewer>
+          <div class="w3-container product-details">
+            <h4 class="w3-center">NUT</h4>
+            <p>
+              Precision-machined hydraulic nuts made from quality forgings.
+              Ensures reliable assembly, strength and long service life in hydraulic fittings.
+            </p>
+            <p class="w3-small w3-text-grey">
+              Available in multiple sizes, threads and materials as per customer drawings.
+            </p>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-card test">
-        <model-viewer id="mybend" src="./3d/bend.glb" alt="BEND PIPE" onclick="onClick1(this)" auto-rotate camera-controls></model-viewer>
-        <!-- <img src="https://www.w3schools.com/w3images/team2.jpg" alt="Bend Pipe" style="width:100%"> -->
-        <div class="w3-container product-details">
-          <h3 style="text-align: center;">Bend Pipe</h3>
-          <!-- <p class="w3-opacity">Designer</p> -->
-          <p>We fabricate a wide array of high-quality bend pipes, available in various bend angles, radii, and materials to change pipeline direction. 
-            Our bend pipes are made for seamless integration and optimal flow in all industrial applications.</p>
-          <!-- <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contact</button></p> -->
+
+      <div class="w3-col l3 m6">
+        <div class="w3-card">
+          <model-viewer src="./3d/bend.glb" auto-rotate camera-controls></model-viewer>
+          <div class="w3-container product-details">
+            <h4 class="w3-center">BEND PIPE</h4>
+            <p>
+              CNC-bent pipes with custom radius and angle options.
+              Used in hydraulic and industrial piping where smooth flow and strength are critical.
+            </p>
+            <p class="w3-small w3-text-grey">
+              Available in multiple sizes, threads and materials as per customer drawings.
+            </p>
+          </div>
         </div>
       </div>
+
     </div>
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-card test">
-        <model-viewer id="myforge" src="./3d/nipple.glb" alt="FORGING" onclick="onClick1(this)" auto-rotate camera-controls></model-viewer>
-        <!-- <img src="https://www.w3schools.com/w3images/team2.jpg" alt="Bend Pipe" style="width:100%"> -->
-        <div class="w3-container product-details">
-          <h3 style="text-align: center;">Forging</h3>
-          <!-- <p class="w3-opacity">Designer</p> -->
-          <p>We produce high-strength industrial forgings, the foundational raw material for our entire product line, available in various steel grades. 
-            Our forgings feature an enhanced grain structure and superior mechanical properties for maximum durability and reliability.</p>
-          <!-- <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contact</button></p> -->
-        </div>
+  </div>
+</section>
+
+<!-- CAPABILITY -->
+<section id="capability">
+  <div class="w3-container w3-light-grey w3-padding-64">
+    <h2 class="w3-center">OUR CAPABILITY</h2>
+    <div class="gallery">
+      <img src="./3d/1000.jpeg">
+      <img src="./3d/600ton2.jpeg">
+      <video controls muted loop src="./3d/forge.mp4"></video>
+      <video controls muted loop src="./3d/cutting.mp4"></video>
+      <img src="./3d/cnc1.jpeg">
+      <img src="./3d/stockpile.jpeg">
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="w3-light-grey">
+  <div class="w3-container w3-padding-64" style="max-width:1100px;margin:auto;">
+
+    <h2 class="w3-center w3-margin-bottom">Contact BIR Industries</h2>
+    <p class="w3-center w3-text-grey w3-margin-bottom">
+      Hydraulic & Forged Components Manufacturer in Ludhiana, Punjab
+    </p>
+
+    <div class="w3-row-padding w3-margin-top">
+
+      <!-- CONTACT DETAILS -->
+      <div class="w3-col m5 s12">
+        <p>
+          <i class="fa fa-map-marker w3-text-red"></i>
+          <strong> Address:</strong><br>
+          Industrial Area C, Giaspura, Ludhiana, Punjab – India
+        </p>
+
+        <p>
+          <i class="fa fa-phone w3-text-green"></i>
+          <strong> Phone:</strong><br>
+          <p style="margin: 0;">Bir Parkash: <a href="tel:+919872812819">+91 98728 12819</a></p><br>
+          <p style="margin: 0;">Parwar Bansal: <a href="tel:+918054640085">+91 80546 40085</a></p><br>
+          <p style="margin: 0;">Jyoti Parkash: <a href="tel:+919216549785">+91 92165 49785</a></p>
+        </p>
+        
+
+        <p>
+          <i class="fa fa-envelope w3-text-blue"></i>
+          <strong> Email:</strong><br>
+          <a href="mailto:mehak085@hotmail.com">mehak085@hotmail.com</a>
+        </p>
+
+        <p class="w3-text-grey w3-small">
+          Business Hours: Monday – Saturday | 9:00 AM – 6:00 PM
+        </p>
       </div>
+
+      <!-- MAP -->
+      <div class="w3-col m7 s12">
+        <iframe
+          src="https://www.google.com/maps?q=Bir%20Industries%20Ludhiana&output=embed"
+          width="100%"
+          height="360"
+          style="border:0;border-radius:8px;"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+
     </div>
   </div>
-</div>
+</section>
 
-<!-- Work Section (Add machine photo's, process photos and perhaps packing photos) -->
-<div class="w3-container" style="padding:64px 16px" id="work">
-  <h3 class="w3-center">OUR CAPABILITIES</h3>
-  <p class="w3-center w3-large">A preview of what we have in-house</p>
-
-
-<div class="gallery">
-
-<div class="gallery-item">
-  <a target="" href="./3d/1000.jpeg">
-    <img src="./3d/1000.jpeg" alt="1000 Ton Knuckle Joint" width="800" height="600">
-  </a>
-  <div class="desc">1000 Ton Knuckle Joint</div>
-</div>
-
-<div class="gallery-item">
-  <a target="" href="./3d/600ton2.jpeg">
-    <img src="./3d/600ton2.jpeg" alt="600 Ton Knuckle Joint" width="800" height="600">
-  </a>
-  <div class="desc">600 Ton Knuckle Joint</div>
-</div>
-
-<div class="gallery-item">
-  <a target="" href="./3d/cutting.mp4">
-    <video style="width:800; height: 600;" controls class="w3-hover-opacity" alt="Rod Cutting"><source src="./3d/cutting.mp4" type="video/mp4" autoplay muted loop></video>
-  </a>
-  <div class="desc">Rod Cutting</div>
-</div>
-
-<div class="gallery-item">
-  <a target="" href="./3d/forge.mp4">
-    <video style="width:800; height: 600;" controls class="w3-hover-opacity" alt="CAP Forging"><source src="./3d/forge.mp4" type="video/mp4" autoplay muted loop></video>
-  </a>
-  <div class="desc">CAP Forging</div>
-</div>
-
-<div class="gallery-item">
-  <a target="" href="./3d/cnc1.jpeg">
-    <img src="./3d/cnc1.jpeg" alt="Turning CNC Machine" width="800" height="600">
-  </a>
-  <div class="desc">Turning CNC Machine</div>
-
-  <a target="" href="./3d/stockpile.jpeg">
-    <img src="./3d/stockpile.jpeg" alt="Inventory" width="800" height="600">
-  </a>
-  <div class="desc">Inventory</div>
-</div>
 
 </div>
 
-
-
-  <!-- <div class="w3-row-padding" style="margin-top:64px">
-    <div class="w3-col l4 m6">
-      <img src="./3d/1000.jpeg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="1000 Ton Press Machine">
-    </div>
-    <div class="w3-col l4 m6">
-      <img src="./3d/600ton1.jpeg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="600 Ton Press Machine">
-    </div>
-    <div class="w3-col l4 m6">
-      <img src="./3d/600ton2.jpeg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="600 Ton Press Machine">
-    </div>
-    <!-- <div class="w3-col l3 m6">
-      <img src="./3d/cnc1.jpeg" style="width:100%; height:max-content;" onclick="onClick(this)" class="w3-hover-opacity" alt="Soundbox">
-    </div> --
-  </div>
-
-  <div class="w3-row-padding w3-section">
-    <div class="w3-col l4 m6">
-      <video style="width:100%" controls class="w3-hover-opacity" alt="A tablet"><source src="./3d/cutting.mp4" type="video/mp4" autoplay muted loop></video>
-    </div>
-    <div class="w3-col l4 m6">
-      <video style="width:100%" controls class="w3-hover-opacity" alt="A tablet"><source src="./3d/forge.mp4" type="video/mp4" autoplay muted loop></video>
-    </div>
-    <div class="w3-col l4 m6">
-      <img src="./3d/stockpile.jpeg" style="width:100%; padding-bottom: 40px;" onclick="onClick(this)" class="w3-hover-opacity" alt="Inventory">
-      <img src="./3d/cnc1.jpeg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="CNC Machine">
-    </div>
-    <!-- <div class="w3-col l3 m6">
-      <img src="https://www.w3schools.com/w3images/tech_drone.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A tableturner">
-    </div> --
-  </div> -->
-</div>
-
-<!-- Modal for full size images on click-->
-<div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
-  <span class="w3-button w3-xxlarge w3-black w3-padding-large w3-display-topright" title="Close Modal Image">×</span>
-  <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
-    <img id="img01" class="w3-image">
-    <p id="caption" class="w3-opacity w3-large"></p>
-  </div>
-</div>
-
-<!-- Modal for full size 3D models on click-->
-<div id="modal02" class="w3-modal w3-black">
-  <span class="w3-button w3-xxlarge w3-black w3-padding-large w3-display-topright" onclick="modal02.style.display='none'" title="Close Modal Image">×</span>
-  <div style="height: 100%;" class="w3-animate-zoom w3-center w3-transparent w3-padding-64">
-    <model-viewer style="height: 60%; margin: auto;" id="img02" auto-rotate camera-controls></model-viewer>
-    <p id="caption2" class="w3-opacity w3-large"></p>
-  </div>
-</div>
-
-<!-- Contact Section -->
-<div class="w3-container" style="padding:128px 16px" id="contact">
-  <h3 class="w3-center">CONTACT</h3>
-  <p class="w3-center w3-large">Better yet, see us in person during our business hours!</p>
-  <div style="margin:48px">
-    <div class="w3-col l6 m6">
-      <a target="" href="./3d/BIR_UPI_QRCODE.png">
-        <img src="./3d/BIR_UPI_QRCODE.png" alt="Turning CNC Machine" style="width:90%; margin-left: 5%;">
-      </a>
-    </div>
-    <div class="w3-col l6 m6">
-        <p style="display: flex; align-items: center;"><i class="fa fa-map-marker fa-fw w3-xxlarge w3-margin-right" style="margin-right: 8px; flex-shrink: 0;"></i> <span style="">Sua Road, Near Nanaksar Kanda, Inductrial Area C, Giaspura, Ludhiana, Punjab</span></p>
-        <p style="display: flex; align-items: center;"><a href="https://wa.me/919872812819"><i class="fa fa-whatsapp fa-fw w3-xxlarge w3-margin-right" style="margin-right: 8px; flex-shrink: 0;"></i> Phone: +91 98728-12819</a></p>
-        <p style="display: flex; align-items: center;"><a href="https://wa.me/918054640085"><i class="fa fa-whatsapp fa-fw w3-xxlarge w3-margin-right" style="margin-right: 8px; flex-shrink: 0;"></i> Phone: +91 80546-40085</a></p>
-        <p style="display: flex; align-items: center;"><a href="https://wa.me/919216549785"><i class="fa fa-whatsapp fa-fw w3-xxlarge w3-margin-right" style="margin-right: 8px; flex-shrink: 0;"></i> Phone: +91 92165-49785</a></p>
-        <p style="display: flex; align-items: center;"><i class="fa fa-envelope fa-fw w3-xxlarge w3-margin-right" style="margin-right: 8px; flex-shrink: 0;"> </i> Email: mehak085@hotmail.com</p>
-        <p style="display: flex; align-items: center;"><i class="fa fa-clock-o fa-fw w3-xxlarge w3-margin-right" style="margin-right: 8px; flex-shrink: 0;"> </i> Hours: Mon - Sat: 10:00 AM - 6:00 PM</p>
-    </div>
-    <br>
-    <div class="w3-col l12 m12" style="margin-top: 30px;">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3424.7085809794576!2d75.9057378756366!3d30.86683302451982!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391a9db2027b8c0f%3A0x9b9bc08a9a971ed9!2sBir%20industries%2C%20Ludhiana!5e0!3m2!1sen!2sin!4v1757925230877!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </div>
-    <!-- Image of location/map -->
-    <!-- <img src="/w3images/map.jpg" class="w3-image w3-greyscale" style="width:100%;margin-top:48px"> -->
-  </div>
-</div>
-
-<!-- Footer -->
-<footer class="w3-center w3-black" style="padding-top: 30px!important; padding-bottom: 200px!important;margin-left: -15%; width: 130%;">
-  <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
-  <div class="w3-xxlarge w3-section">
-    <a href="https://www.facebook.com/bir.parkash.102758"><i class="fa fa-facebook-official w3-hover-opacity fa-inverse"></i></a>
-    <!-- <i class="fa fa-instagram w3-hover-opacity"></i> -->
-    <!-- <i class="fa fa-snapchat w3-hover-opacity"></i> -->
-    <!-- <i class="fa fa-pinterest-p w3-hover-opacity"></i> -->
-    <!-- <i class="fa fa-twitter w3-hover-opacity"></i> -->
-    <a><i class="fa fa-linkedin w3-hover-opacity fa-inverse"></i></a>
-  </div>
-  <p style="color: white;">COPYRIGHT @ BIR INDUSTRIES 2025 - ALL RIGHTS RESERVED</p>
+<!-- FOOTER -->
+<footer class="w3-center w3-padding-32">
+  <p>BIR Industries – Hydraulic fittings manufacturer in Ludhiana</p>
+  <p>© 2026 BIR INDUSTRIES. All Rights Reserved.</p>
 </footer>
+
+<!-- FLOATING WHATSAPP -->
  
+<a href="https://wa.me/919872812819?text=Hello%20BIR%20Industries,%0A%0AI%20would%20like%20to%20request%20a%20quotation%20for:%0A%0A•%20Product:%0A•%20Specification:%0A•%20Quantity:%0A•%20Delivery%20Location:%0A%0ARegards,"
+  target="_blank" class="whatsapp-float">
+    <i class="fa fa-whatsapp"></i>
+</a>
+
+<!-- JS -->
 <script>
-// Modal Image Gallery
-function onClick(element) {
-  document.getElementById("img01").src = element.src;
-  document.getElementById("modal01").style.display = "block";
-  var captionText = document.getElementById("caption");
-  captionText.innerHTML = element.alt;
-}
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(".nav-link");
+const navbar = document.getElementById("navbar");
 
-function onClick1(element) {
-  document.getElementById("img02").src = element.src;
-  document.getElementById("modal02").style.display = "block";
-  var captionText = document.getElementById("caption2");
-  captionText.innerHTML = element.alt;
-}
-
-
-// Toggle between showing and hiding the sidebar when clicking the menu icon
-var mySidebar = document.getElementById("mySidebar");
-
-function w3_open() {
-  if (mySidebar.style.display === 'block') {
-    mySidebar.style.display = 'none';
-  } else {
-    mySidebar.style.display = 'block';
-  }
-}
-
-// Close the sidebar with the close button
-function w3_close() {
-    mySidebar.style.display = "none";
-}
-
-// ------------------------------------------------
-
-const modelViewer1 = document.querySelector('#mycap');
-modelViewer1.style.width = '100%';
-modelViewer1.addEventListener('load', () => {
-  const material = modelViewer1.model.materials[0]; 
-  material.pbrMetallicRoughness.setBaseColorFactor([0.85, 0.85, 0.85, 0.1]);
-  material.pbrMetallicRoughness.setMetallicFactor(0.9);
-  material.pbrMetallicRoughness.setRoughnessFactor(0.2);
-},);
-
-if (modelViewer1.model) {
-  const material = modelViewer1.model.materials[0];
-  if (material) {
-    material.pbrMetallicRoughness.setBaseColorFactor([0.85, 0.85, 0.85, 0.1]);
-    material.pbrMetallicRoughness.setMetallicFactor(0.9);
-    material.pbrMetallicRoughness.setRoughnessFactor(0.2);
-  } else {
-    console.warn("No material found on the model.");
-  }
-}
-
-const modelViewer2 = document.querySelector('#mynipple');
-modelViewer2.style.width = '100%';
-modelViewer2.addEventListener('load', () => {
-  const material = modelViewer2.model.materials[0];
-  material.pbrMetallicRoughness.setBaseColorFactor([0.85, 0.85, 0.85, 0.1]);
-  material.pbrMetallicRoughness.setMetallicFactor(0.9);
-  material.pbrMetallicRoughness.setRoughnessFactor(0.2);
-},);
-
-  if (modelViewer2.model) {
-    const material = modelViewer2.model.materials[0];
-    if (material) {
-      material.pbrMetallicRoughness.setBaseColorFactor([0.85, 0.85, 0.85, 0.1]);
-      material.pbrMetallicRoughness.setMetallicFactor(0.9);
-      material.pbrMetallicRoughness.setRoughnessFactor(0.2);
-    } else {
-      console.warn("No material found on the model.");
+window.addEventListener("scroll", () => {
+  let current = "";
+  sections.forEach(sec => {
+    if (pageYOffset >= sec.offsetTop - 120 &&
+        pageYOffset < sec.offsetTop + sec.offsetHeight) {
+      current = sec.id;
     }
-  }
+  });
 
-const modelViewer3 = document.querySelector('#mynut');
-modelViewer3.style.width = '100%';
-modelViewer3.addEventListener('load', () => {
-  const material = modelViewer3.model.materials[0]; 
-  material.pbrMetallicRoughness.setBaseColorFactor([0.85, 0.85, 0.85, 0.1]);
-  material.pbrMetallicRoughness.setMetallicFactor(0.9);
-  material.pbrMetallicRoughness.setRoughnessFactor(0.2);
-},);
+  navLinks.forEach(link => {
+    link.classList.toggle("active", link.getAttribute("href") === "#" + current);
+  });
 
-  if (modelViewer3.model) {
-    const material = modelViewer3.model.materials[0];
-    if (material) {
-      material.pbrMetallicRoughness.setBaseColorFactor([0.85, 0.85, 0.85, 0.1]);
-      material.pbrMetallicRoughness.setMetallicFactor(0.9);
-      material.pbrMetallicRoughness.setRoughnessFactor(0.2);
-    } else {
-      console.warn("No material found on the model.");
-    }
-  }
+  navbar.classList.toggle("solid", window.scrollY >= 0);
+  navbar.classList.toggle("shrink", window.scrollY >= 0);
+  // navbar.classList.toggle("transparent", window.scrollY <= 80);
+});
 
-const modelViewer4 = document.querySelector('#mybend');
-modelViewer4.style.width = '100%';
-modelViewer4.addEventListener('load', () => {
-  const material = modelViewer4.model.materials[0]; 
-  material.pbrMetallicRoughness.setBaseColorFactor([0.85, 0.85, 0.85, 0.1]);
-  material.pbrMetallicRoughness.setMetallicFactor(0.9);
-  material.pbrMetallicRoughness.setRoughnessFactor(0.2);
-},);
-
-  if (modelViewer4.model) {
-    const material = modelViewer4.model.materials[0];
-    if (material) {
-      material.pbrMetallicRoughness.setBaseColorFactor([0.85, 0.85, 0.85, 0.1]);
-      material.pbrMetallicRoughness.setMetallicFactor(0.9);
-      material.pbrMetallicRoughness.setRoughnessFactor(0.2);
-    } else {
-      console.warn("No material found on the model.");
-    }
-  }
-
-const modelViewer5 = document.querySelector('#myforge');
-modelViewer5.style.width = '100%';
-modelViewer5.addEventListener('load', () => {
-  const material = modelViewer5.model.materials[0]; 
-  material.pbrMetallicRoughness.setBaseColorFactor([0.85, 0.85, 0.85, 0.1]);
-  material.pbrMetallicRoughness.setMetallicFactor(0.9);
-  material.pbrMetallicRoughness.setRoughnessFactor(0.2);
-},);
-
-  if (modelViewer5.model) {
-    const material = modelViewer5.model.materials[0];
-    if (material) {
-      material.pbrMetallicRoughness.setBaseColorFactor([0.85, 0.85, 0.85, 0.1]);
-      material.pbrMetallicRoughness.setMetallicFactor(0.9);
-      material.pbrMetallicRoughness.setRoughnessFactor(0.2);
-    } else {
-      console.warn("No material found on the model.");
-    }
-  }
-
-const modelViewer6 = document.querySelector('#img02');
-modelViewer6.style.width = '100%';
-modelViewer6.addEventListener('load', () => {
-  const material = modelViewer6.model.materials[0]; 
-  material.pbrMetallicRoughness.setBaseColorFactor([0.85, 0.85, 0.85, 0.1]);
-  material.pbrMetallicRoughness.setMetallicFactor(0.9);
-  material.pbrMetallicRoughness.setRoughnessFactor(0.2);
-},);
-
-if (modelViewer6.model) {
-  const material = modelViewer6.model.materials[0];
-  if (material) {
-    material.pbrMetallicRoughness.setBaseColorFactor([0.85, 0.85, 0.85, 0.1]);
-    material.pbrMetallicRoughness.setMetallicFactor(0.9);
-    material.pbrMetallicRoughness.setRoughnessFactor(0.2);
-  } else {
-    console.warn("No material found on the model.");
-  }
+function toggleNav() {
+  const nav = document.getElementById("mobileNav");
+  nav.style.display = nav.style.display === "block" ? "none" : "block";
 }
-// ------------------------------------------------
 </script>
-<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+<script>
+  document.querySelectorAll('model-viewer').forEach(viewer => {
+    viewer.addEventListener('load', () => {
+      const model = viewer.model;
+      if (!model) return;
+
+      model.materials.forEach(material => {
+        const pbr = material.pbrMetallicRoughness;
+        if (!pbr) return;
+
+        pbr.setBaseColorFactor([0.85, 0.85, 0.85, 1.0]);
+        pbr.setMetallicFactor(0.9);
+        pbr.setRoughnessFactor(0.2);
+      });
+    });
+  });
+</script>
+
 </body>
 </html>
