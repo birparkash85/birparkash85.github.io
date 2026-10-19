@@ -206,6 +206,20 @@ model-viewer { width: 100%; height: 260px; --poster-color: transparent; backgrou
 .mat { border-top: 2px solid var(--ink); padding-top: 16px; }
 .mat p { color: #474c54; font-size: .95rem; margin: 0; }
 
+/* About photo */
+.about-photo { margin: 32px 0 0; }
+.about-photo img { width: 100%; height: auto; border-radius: var(--radius); aspect-ratio: 12 / 5; object-fit: cover; }
+.about-photo figcaption { font-size: .85rem; color: var(--muted); margin-top: 8px; }
+
+/* Finished parts gallery */
+.parts-head { margin: 56px 0 18px; display: flex; align-items: baseline; justify-content: space-between; gap: 8px 24px; flex-wrap: wrap; }
+.parts-head h3 { margin: 0; font-size: 1.7rem; }
+.parts-head p { margin: 0; color: var(--muted); }
+.parts-gallery { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 230px; gap: 12px; }
+.p-item.p-wide { grid-column: span 2; }
+.p-item.p-tall { grid-row: span 2; }
+.p-item picture { display: block; width: 100%; height: 100%; }
+
 /* ---------- Manufacturing ---------- */
 .process { list-style: none; margin: 0 0 64px; padding: 0; display: grid; grid-template-columns: repeat(6, 1fr); gap: 0; counter-reset: s; }
 .process li { padding: 0 20px 0 0; position: relative; }
@@ -392,6 +406,7 @@ dialog::backdrop { background: rgba(10,11,13,.82); backdrop-filter: blur(3px); }
   .process { grid-template-columns: 1fr 1fr; }
   .process li::before { display: none; }
   .gallery { grid-template-columns: 1fr 1fr; }
+  .parts-gallery { grid-template-columns: 1fr 1fr; grid-auto-rows: 160px; }
   .rfq-form { grid-template-columns: 1fr; padding: 22px 18px; }
   .form-actions .btn { width: 100%; justify-content: center; }
   .footer-grid { grid-template-columns: 1fr; gap: 28px; }
